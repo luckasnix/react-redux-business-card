@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 import TextInput from '../components/TextInput'
-import SubmitBtn from '../components/SubmitBtn'
+import InfoBtn from '../components/InfoBtn'
 import * as Actions from '../../store/actions/businessCardActions'
 import styles from './InfoInput.module.css'
 
@@ -27,20 +27,34 @@ function InfoInput() {
     },
     [dispatch]
   )
-  const submitInfo = useCallback(
-    (evt) => {
-      evt.preventDefault()
-      createBusinessCard(name, job)
+  const deleteBusinessCard = useCallback(
+    () => {
+      dispatch(Actions.deleteBusinessCard())
     },
-    [createBusinessCard, name, job]
+    [dispatch]
+  )
+  const createInfo = useCallback(
+    () => {
+      createBusinessCard(name, job)
+      setName('')
+      setJob('')
+    },
+    [createBusinessCard, name, setName, job, setJob]
+  )
+  const deleteInfo = useCallback(
+    () => {
+      deleteBusinessCard()
+      setName('')
+      setJob('')
+    },
+    [deleteBusinessCard, setName, setJob]
   )
   return (
     <div className={styles.container}>
-      <form onSubmit={submitInfo}>
-        <TextInput title='Nome:' value={name} changed={handleNameChange}/>
-        <TextInput title='Profissão:' value={job} changed={handleJobChange}/>
-        <SubmitBtn value='Criar'/>
-      </form>
+      <TextInput title='Nome:' value={name} changed={handleNameChange}/>
+      <TextInput title='Profissão:' value={job} changed={handleJobChange}/>
+      <InfoBtn title='Criar' clicked={createInfo}/>
+      <InfoBtn title='Deletar' clicked={deleteInfo}/>
     </div>
   )
 }
