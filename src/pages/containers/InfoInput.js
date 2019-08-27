@@ -1,6 +1,8 @@
 import React, { useState, useCallback } from 'react'
+import { useDispatch } from 'react-redux'
 import TextInput from '../components/TextInput'
 import SubmitBtn from '../components/SubmitBtn'
+import * as Actions from '../../store/actions/businessCardActions'
 import styles from './InfoInput.module.css'
 
 function InfoInput() {
@@ -14,16 +16,23 @@ function InfoInput() {
   )
   const handleJobChange = useCallback(
     (evt) => {
-      setJob(evt.target.job)
+      setJob(evt.target.value)
     },
     [setJob]
+  )
+  const dispatch = useDispatch()
+  const createBusinessCard = useCallback(
+    (infoName, infoJob) => {
+      dispatch(Actions.createBusinessCard(infoName, infoJob))
+    },
+    [dispatch]
   )
   const submitInfo = useCallback(
     (evt) => {
       evt.preventDefault()
-      window.alert('Cartão criado!')
+      createBusinessCard(name, job)
     },
-    []
+    [createBusinessCard, name, job]
   )
   return (
     <div className={styles.container}>

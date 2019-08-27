@@ -6,7 +6,7 @@ function BusinessCardPage() {
   return (
     <>
       <InfoInput/>
-      <BusinessCard name={'Lucas'} job={'Desenvolvedor React'}/>
+      <BusinessCard/>
     </>
   )
 }
