@@ -13,7 +13,11 @@ function BusinessCardDisplay() {
     <div className={styles.container}>
       {
         businessCard &&
-        <BusinessCard name={businessCard.name} job={businessCard.job}/>
+        <BusinessCard
+          name={businessCard.name}
+          job={businessCard.job}
+          email={businessCard.email}
+        />
       }
     </div>
   )

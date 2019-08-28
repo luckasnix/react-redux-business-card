@@ -8,7 +8,8 @@ const businessCardReducer = createReducer(
     [ActionsTypes.CREATE_BUSINESS_CARD]: (_, action) => {
       return {
         name: action.name,
-        job: action.job
+        job: action.job,
+        email: action.email
       }
     },
     [ActionsTypes.DELETE_BUSINESS_CARD]: () => {

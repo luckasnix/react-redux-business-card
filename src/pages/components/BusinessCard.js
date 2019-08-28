@@ -6,6 +6,7 @@ function BusinessCard(props) {
     <div className={styles.container}>
       <p>{props.name}</p>
       <p>{props.job}</p>
+      <p>{props.email}</p>
     </div>
   )
 }
