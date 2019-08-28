@@ -1,0 +1,9 @@
+.btn {
+  width: 120px;
+  height: 40px;
+  font-family: 'ShareTechMono';
+  font-size: 18px;
+  border: none;
+  background-color: #f5f6fa;
+  cursor: pointer;
+}

@@ -1,0 +1,14 @@
+.group {
+  font-family: 'ShareTechMono';
+  font-size: 18px;
+  color: #f5f6fa;
+}
+.input {
+  width: 186px;
+  height: 22px;
+  padding-left: 6px;
+  font-family: 'ShareTechMono';
+  font-size: 16px;
+  border: none;
+  background-color: #f5f6fa;
+}

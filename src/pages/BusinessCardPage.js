@@ -1,12 +1,12 @@
 import React from 'react'
 import InfoInput from './containers/InfoInput'
-import BusinessCard from './containers/BusinessCard'
+import BusinessCardDisplay from './containers/BusinessCardDisplay'
 
 function BusinessCardPage() {
   return (
     <>
       <InfoInput/>
-      <BusinessCard/>
+      <BusinessCardDisplay/>
     </>
   )
 }

@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from './InfoBtn.module.css'
 
 function InfoBtn(props) {
   return (
-    <button onClick={props.clicked}>{props.title}</button>
+    <button className={styles.btn} onClick={props.clicked}>{props.title}</button>
   )
 }
 

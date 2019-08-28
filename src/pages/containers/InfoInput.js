@@ -51,10 +51,14 @@ function InfoInput() {
   )
   return (
     <div className={styles.container}>
-      <TextInput title='Nome:' value={name} changed={handleNameChange}/>
-      <TextInput title='Profissão:' value={job} changed={handleJobChange}/>
-      <InfoBtn title='Criar' clicked={createInfo}/>
-      <InfoBtn title='Deletar' clicked={deleteInfo}/>
+      <div className={styles.inputGroup}>
+        <TextInput title='Nome:' value={name} charLimit={20} changed={handleNameChange}/>
+        <TextInput title='Profissão:' value={job} charLimit={20} changed={handleJobChange}/>
+      </div>
+      <div className={styles.btnGroup}>
+        <InfoBtn title='Criar' clicked={createInfo}/>
+        <InfoBtn title='Deletar' clicked={deleteInfo}/>
+      </div>
     </div>
   )
 }
